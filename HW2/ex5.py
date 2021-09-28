@@ -16,11 +16,14 @@ try:
 except ValueError:
     print('Ошибка! Введите натуральное число!')
 else:
-    for i in range(len(my_list)-1):
+    my_list = my_list[::-1]
+    for i in range(len(my_list)):
         if my_list[i] == number:
-            my_list.insert(i + 1, number)
+            my_list.insert(i, number)
+            my_list = my_list[::-1]
             break
     else:
+        my_list = my_list[::-1]
         my_list.append(number)
     print(my_list)
 
