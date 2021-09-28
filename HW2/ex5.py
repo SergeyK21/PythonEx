@@ -16,12 +16,9 @@ try:
 except ValueError:
     print('Ошибка! Введите натуральное число!')
 else:
-    for i in range(len(my_list)):
-        if my_list[i] == number and i != len(my_list) - 1:
+    for i in range(len(my_list)-1):
+        if my_list[i] == number:
             my_list.insert(i + 1, number)
-            break
-        elif my_list[i] == number:
-            my_list.append(number)
             break
     else:
         my_list.append(number)
