@@ -19,4 +19,5 @@ else:
     for i in range(len(my_list)):
         if my_list[i] < number:
             my_list.insert(i, number)
+            break
     print(my_list)
