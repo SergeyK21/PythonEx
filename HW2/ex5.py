@@ -20,4 +20,6 @@ else:
         if my_list[i] < number:
             my_list.insert(i, number)
             break
+    else:
+        my_list.append(number)
     print(my_list)
