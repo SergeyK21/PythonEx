@@ -12,13 +12,28 @@
 my_list = [7, 5, 3, 3, 2]
 
 try:
-    my_list.append(int(input('Введите натуральное число: ')))
+    number = int(input('Введите натуральное число: '))
 except ValueError:
     print('Ошибка! Введите натуральное число!')
 else:
-    # сортировка пузырьком
+    my_list = my_list[::-1]
+    i = 0
+    while i < len(my_list):
+        if number == my_list[i]:
+            my_list.insert(i, number)
+            my_list = my_list[::-1]
+            break
+        i += 1
+    else:
+        my_list = my_list[::-1]
+        my_list.append(number)
+    print(my_list)
+
+'''
+# сортировка пузырьком
     for i in range(len(my_list) - 1):
         for j in range(len(my_list) - 1 - i):
             if my_list[j] < my_list[j + 1]:
                 my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]  # Крутая штука!
     print(my_list)
+'''
