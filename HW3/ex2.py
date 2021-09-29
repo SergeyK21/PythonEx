@@ -7,7 +7,7 @@
 """
 
 
-def foo(name, surname, year_of_birth, city_of_residence, email, tel_number):
+def foo(**data):
     """
     Осуществляет вывод данных о пользователе одной строкой.
 
@@ -17,24 +17,18 @@ def foo(name, surname, year_of_birth, city_of_residence, email, tel_number):
     :param city_of_residence:
     :param email:
     :param tel_number:
-    :return:str({
+    :return:{
         'Имя': name,
         'Фамилия': surname,
         'Год рождения': year_of_birth,
         'Город проживания': city_of_residence,
         'email': email,
         'Номер телефона': tel_number
-    })
+    }
     """
-    return str({
-        'Имя': name,
-        'Фамилия': surname,
-        'Год рождения': year_of_birth,
-        'Город проживания': city_of_residence,
-        'email': email,
-        'Номер телефона': tel_number
-    })
+    return data
 
 
 if __name__ == '__main__':
-    print(foo("Клим", "Чугункин", 1905, "Москва", None, '01'))
+    print(foo(Имя="Клим", Фамилия="Чугункин", Год_рождени=1905, Место_жительства="Москва", email=None,
+              Номер_телефона='01'))
