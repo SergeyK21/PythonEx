@@ -10,38 +10,38 @@
 """
 
 
-def foo(sum_num, str_oka):
+def foo(sum_1, str_1):
     """
     Сумма вновь введенных чисел + sum_num
-    :param sum_num:
-    :param str_oka:
-    :return: ('',sum_num)
+    :param sum_1:
+    :param str_1:
+    :return: ('',sum_1)
     """
     try:
-        list_sum_num = str(str_oka).split()
-        for ls in list_sum_num:
+        list_1 = str(str_1).split()
+        for ls in list_1:
             if ls != 'стоп':
-                sum_num += int(ls)
+                sum_1 += int(ls)
             else:
-                return ('стоп', sum_num)
+                return ('стоп', sum_1)
         else:
-            return ('поехали еще', sum_num)
-        return ('стоп', sum_num)
+            return ('поехали еще', sum_1)
+        return ('стоп', sum_1)
     except Exception as e:
-        return (f"Ошибка - {e}", sum_num)
+        return (f"Ошибка - {e}", sum_1)
 
 
 if __name__ == '__main__':
     flag = True
-    sum_num = 0
+    sum_1 = 0
     while (flag):
         flag = False
-        str_oka = input('Введите числа разделяя их пробелом \n(для продолжения нажмите "enter", для очтановки наберите слово "стоп"): ')
-        kortezg = foo(sum_num, str_oka)
-        sum_num = kortezg[1]
-        if kortezg[0] == 'поехали еще':
-            print(f'Общая сумма = {sum_num}')
+        str_oka = input('Введите числа разделяя их пробелом \n(для продолжения нажмите "enter", для оcтановки наберите слово "стоп"): ')
+        tuple_1 = foo(sum_1, str_oka)
+        sum_1 = tuple_1[1]
+        if tuple_1[0] == 'поехали еще':
+            print(f'Общая сумма = {sum_1}')
             flag = True
         else:
-            print(f'Общая сумма = {sum_num}')
-            print(f'Причина выхода: {kortezg[0]}')
+            print(f'Общая сумма = {sum_1}')
+            print(f'Причина выхода: {tuple_1[0]}')
