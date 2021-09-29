@@ -53,7 +53,7 @@ else:
         name.append(cp[1]['название']),
         price.append(cp[1]['цена']),
         number_of.append(cp[1]['колличество']),
-        units.append(cp[1]['eд'])
+        units.append(cp[1]['ед'])
     units = list(set(units))
     new_cpicok = {
         "название": name,
