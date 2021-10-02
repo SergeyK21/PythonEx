@@ -14,7 +14,7 @@ def my_sum(a, b):
 
     :param a:
     :param b:
-    :return:a + b
+    :return:a * b
     """
     return a * b
 
