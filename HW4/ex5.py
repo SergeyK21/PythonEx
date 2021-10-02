@@ -16,7 +16,7 @@ def my_sum(a, b):
     :param b:
     :return:a + b
     """
-    return a + b
+    return a * b
 
 
 print(reduce(my_sum, [randint(100, 1000) for i in range(4)]))
