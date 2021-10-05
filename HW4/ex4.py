@@ -11,17 +11,17 @@ my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
 print(*(el for el in my_list if my_list.count(el) == 1))
 
 # 2 вариант
-set_1 = set()
+list_1 = list()
 set_2 = set()
 for el in my_list:
     if el in set_2:
         continue
-    elif el in set_1:
-        set_1.remove(el)
+    elif el in list_1:
+        list_1.remove(el)
         set_2.add(el)
         continue
-    set_1.add(el)
+    list_1.append(el)
 
-print(set_1)
+print(*(el for el in list_1))
 
 
