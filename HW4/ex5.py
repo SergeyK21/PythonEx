@@ -10,7 +10,7 @@ from functools import reduce
 
 def my_sum(a, b):
     """
-    Суммирование
+    Произведение
 
     :param a:
     :param b:
