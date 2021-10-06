@@ -4,6 +4,7 @@
 Нужно получить результат вычисления произведения всех элементов списка.
 Подсказка: использовать функцию reduce().
 """
+import random
 from random import randint
 from functools import reduce
 
@@ -19,4 +20,4 @@ def my_sum(a, b):
     return a * b
 
 
-print(reduce(my_sum, (randint(100, 1000) for i in range(4))))
+print(reduce(my_sum, (random.randrange(100, 1001, 2) for i in range(4))))
