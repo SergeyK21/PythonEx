@@ -23,6 +23,6 @@ def salary_calculation(hours, rate, prize=0):
 
 if __name__ == '__main__':
     try:
-        salary_calculation(argv[2], argv[3], argv[4])
+        salary_calculation(argv[1], argv[2], argv[3])
     except IndexError:
-        salary_calculation(argv[2], argv[3])
+        salary_calculation(argv[1], argv[2])
