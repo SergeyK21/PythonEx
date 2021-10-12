@@ -13,11 +13,15 @@
 [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 Подсказка: использовать менеджер контекста.
 """
-with open('text_ex7.txt', encoding='utf-8') as f_obj:
-    content = f_obj.readlines()
-data = [el.split() for el in content]
-new_data = []
-new_data.append({el[0]: (int(el[2]) - int(el[3])) for el in data})
-temp = [el[1] for el in new_data[0].items() if el[1] > 0]
-new_data.append({"average_profit": sum(temp) / len(temp)})
-print(new_data)
+import json
+
+with open('test_ex7.json', 'w', encoding='utf-8') as f_json_obj:
+    with open('text_ex7.txt', encoding='utf-8') as f_obj:
+        content = f_obj.readlines()
+    data = [el.split() for el in content]
+    new_data = []
+    new_data.append({el[0]: (int(el[2]) - int(el[3])) for el in data})
+    temp = [el[1] for el in new_data[0].items() if el[1] > 0]
+    new_data.append({"average_profit": sum(temp) / len(temp)})
+    json.dump(new_data, f_json_obj)
+    print(new_data)
