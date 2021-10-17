@@ -41,12 +41,13 @@ class Matrix:
     def __add__(self, other):
         if len(self.matrix) != len(other.matrix):
             return 'Ошибка'
-        elif len(self.matrix[0]) != len(other.matrix[0]):
-            return 'Ошибка'
         else:
             new_matrix = []
             for i in range(len(self.matrix)):
-                new_matrix.append([other.matrix[i][j] + self.matrix[i][j] for j in range(len(self.matrix[i]))])
+                if len(self.matrix[i]) != len(other.matrix[i]):
+                    return 'Ошибка'
+                else:
+                    new_matrix.append([other.matrix[i][j] + self.matrix[i][j] for j in range(len(self.matrix[i]))])
         return Matrix(new_matrix)
 
 
@@ -60,6 +61,12 @@ m_2 = Matrix([[-3, -1, 2],
 
 m_3 = Matrix([[-3, -1, 2],
               [-2, -2, -2]]);
+
+m_4 = Matrix([[-3, -1, 2],
+              [-2, -2, -2],
+              [-1, -3]]);
+
 m = m_1 + m_2
 print(m)
 print(m_1 + m_3)
+print(m_1 + m_4)
