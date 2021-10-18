@@ -29,3 +29,56 @@
 Подсказка: подробный список операторов для перегрузки доступен по ссылке.
 
 """
+
+
+class Organic_cell:
+    def __init__(self, cell):
+        self.__cell = cell
+
+    @property
+    def cell(self):
+        return self.__cell
+
+    @cell.setter
+    def cell(self, cell):
+        self.__cell = cell
+
+    def __add__(self, other):
+        return Organic_cell(self.__cell + other.cell)
+
+    def __sub__(self, other):
+        if (self.__cell >= other.cell):
+            return Organic_cell(self.__cell - other.cell)
+        else:
+            raise Exception('Отрицательное значение при вычитании!')
+
+    def __mul__(self, other):
+        return Organic_cell(self.__cell * other.cell)
+
+    def __truediv__(self, other):
+        return Organic_cell(int(round(self.__cell / other.cell, 0)))
+
+    def make_order(self, row, other=None):
+        if other == None:
+            str_1 = ''.join(('*' for el in range(self.__cell)))
+            for i in range(0, len(str_1), row):
+                print(str_1[i:i + row])
+        else:
+            str_1 = ''.join(('*' for el in range(other.cell)))
+            for i in range(0, len(str_1), row):
+                print(str_1[i:i + row])
+
+
+oc = Organic_cell(15)
+oc_1 = Organic_cell(12)
+oc.make_order(5)
+print()
+oc.make_order(5, oc_1)
+print()
+oc.make_order(5, oc - oc_1)
+print()
+oc.make_order(10, oc + oc_1)
+print()
+oc.make_order(20, oc * oc_1)
+print()
+oc.make_order(20, oc / oc_1)
