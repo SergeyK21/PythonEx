@@ -18,3 +18,4 @@ try:
     print(f'Результат = {a / b}')
 except Exception as ex:
     print(f"Ошибка - {ex}")
+
