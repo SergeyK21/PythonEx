@@ -59,4 +59,4 @@ class Date:
 
 
 date = Date()
-date.method_1("1 - января - 2021")
+date.method_1("1 - янв - 2021")
