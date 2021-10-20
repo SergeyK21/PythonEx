@@ -25,6 +25,7 @@ class MyException:
         elif 'stop' == str_1:
             return 'stop'
         else:
+            print('Это не число!')
             return None
 
 
@@ -33,8 +34,6 @@ temp = MyException.my_try_catch(input(f"Введите число: "))
 while temp != 'stop':
     if temp:
         my_list.append(temp)
-    else:
-        print('Это не число!')
     temp = MyException.my_try_catch(input(f"Введите число: "))
 
 print(my_list)
