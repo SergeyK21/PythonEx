@@ -15,5 +15,6 @@ try:
     b = int(input('Введите делитель: '))
     if b == 0:
         raise MyException('Нельзя делить на 0')
+    print(f'Результат = {a / b}')
 except Exception as ex:
     print(f"Ошибка - {ex}")
