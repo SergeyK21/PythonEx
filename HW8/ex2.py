@@ -12,8 +12,8 @@ class MyException(Exception):
 
 try:
     a = int(input('Введите делимое: '))
-    b=int(input('Введите делитель: '))
-    if b==0:
+    b = int(input('Введите делитель: '))
+    if b == 0:
         raise MyException('Нельзя делить на 0')
 except Exception as ex:
     print(f"Ошибка - {ex}")
